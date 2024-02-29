@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>话痨的Nate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="话痨的Nate">
+<meta property="og:url" content="https://natexub.github.io/page/7/index.html">
+<meta property="og:site_name" content="话痨的Nate">
+<meta property="og:locale">
+<meta property="article:author" content="Nate">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="话痨的Nate" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">话痨的Nate</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">走过，见过，存在过。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://natexub.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-git-commit-best-practice" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/09/06/git-commit-best-practice/" class="article-date">
+  <time class="dt-published" datetime="2020-09-06T09:57:51.000Z" itemprop="datePublished">2020-09-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/09/06/git-commit-best-practice/">Git commit 最佳实践</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="基本原则"><a href="#基本原则" class="headerlink" title="基本原则"></a>基本原则</h2><h3 id="分组提交相关修改"><a href="#分组提交相关修改" class="headerlink" title="分组提交相关修改"></a>分组提交相关修改</h3><p>类似于变量的“作用域最小化原则”，每次提交仅精细提交关联的改动。对两个不同bug的修改应分为两组，单独地提交。<br>理由：精细提交使其他开发成员更容易理解更改，并在出现问题时回滚。</p>
+<h3 id="经常提交"><a href="#经常提交" class="headerlink" title="经常提交"></a>经常提交</h3><p>一方面正如上面所说，经常提交使得每次提交的改动较小。另一方面，可以更频繁地与他人共享最新代码，以减小合并冲突的可能。</p>
+<h3 id="不半途而废地提交"><a href="#不半途而废地提交" class="headerlink" title="不半途而废地提交"></a>不半途而废地提交</h3><p>只在逻辑完整时提交代码。为了照顾上面两条原则，也就需要把大的工作拆分成可以快速完成的逻辑块。通常提交未完成代码的目的是需要一个保存变动副本（checkout 分支，pull远程代码），这种情况应该使用<a target="_blank" rel="noopener" href="https://git-scm.com/docs/git-stash">git-stash</a>功能。</p>
+<h3 id="提交前做好测试"><a href="#提交前做好测试" class="headerlink" title="提交前做好测试"></a>提交前做好测试</h3><p>提交之前要通过测试来确保自己的改动没有任何副作用，尤其是和他人协作的情况下。做好测试是一件需要刻意练习的技能。</p>
+<h3 id="使用branch"><a href="#使用branch" class="headerlink" title="使用branch"></a>使用branch</h3><p>分支是Git最强大的功能之一。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="git-emoji"><a href="#git-emoji" class="headerlink" title="git emoji"></a>git emoji</h2><p><a target="_blank" rel="noopener" href="https://gitmoji.dev/">https://gitmoji.dev/</a></p>
+<p>参考:</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://gist.github.com/luismts/495d982e8c5b1a0ced4a57cf3d93cf60">Git Tips and Git Commit Best Practices</a></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://natexub.github.io/2020/09/06/git-commit-best-practice/" data-id="clt6mrpib0015lkc670j8a5sc" data-title="Git commit 最佳实践" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" rel="tag">最佳实践</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-interview-javascript" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/08/22/interview-javascript/" class="article-date">
+  <time class="dt-published" datetime="2020-08-22T09:55:08.000Z" itemprop="datePublished">2020-08-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/interview/">interview</a>►<a class="article-category-link" href="/categories/interview/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/08/22/interview-javascript/">面试准备-Javascript基础</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>作用域的判断</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timer = <span class="keyword">function</span>(<span class="params">name</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> start = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">stop</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> end  = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">            <span class="keyword">var</span> time = end.<span class="title function_">getTime</span>() - start.<span class="title function_">getTime</span>();</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Timer:&#x27;</span>, name, <span class="string">&#x27;finished in&#x27;</span>, time, <span class="string">&#x27;ms&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://natexub.github.io/2020/08/22/interview-javascript/" data-id="clt6mrpih001nlkc62wl8fol8" data-title="面试准备-Javascript基础" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-new-react" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/07/30/new-react/" class="article-date">
+  <time class="dt-published" datetime="2020-07-30T14:46:03.000Z" itemprop="datePublished">2020-07-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/07/30/new-react/">新建React项目</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="不要全局安装"><a href="#不要全局安装" class="headerlink" title="不要全局安装"></a>不要全局安装</h3><p><a target="_blank" rel="noopener" href="https://create-react-app.dev/docs/getting-started/#quick-start"><code>create-react-app</code></a></p>
+<p>见[[npx]]</p>
+<h3 id="根据包管理器选择"><a href="#根据包管理器选择" class="headerlink" title="根据包管理器选择"></a>根据包管理器选择</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Run this to use npm</span></span><br><span class="line">npx create-react-app my-app</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Or run this to use yarn</span></span><br><span class="line">yarn create react-app my-app    </span><br></pre></td></tr></table></figure>
+
+<h3 id="选择模板"><a href="#选择模板" class="headerlink" title="选择模板"></a>选择模板</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--template [template-name]sd</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app my-app --template typescript</span><br></pre></td></tr></table></figure>
+
+<p>默认提供两个模板</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/facebook/create-react-app/tree/main/packages/cra-template">cra-template</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/facebook/create-react-app/tree/main/packages/cra-template-typescript">cra-template-typescript</a></li>
+</ul>
+<h4 id="自定义模板"><a href="#自定义模板" class="headerlink" title="自定义模板"></a>自定义模板</h4><p><a target="_blank" rel="noopener" href="https://create-react-app.dev/docs/custom-templates/">Custom Templates | Create React App</a></p>
+<h5 id="自定义模板包命名规则"><a href="#自定义模板包命名规则" class="headerlink" title="自定义模板包命名规则"></a>自定义模板包命名规则</h5><p>带范围的模板命名：<code>@[scope-name]/cra-template</code> 或者 <code>@[scope-name]/cra-template-[template-name]</code></p>
+<p>分别对应：<code>@[scope]</code> 和 <code>@[scope]/[template-name]</code><br>不带范围的：<a target="_blank" rel="noopener" href="https://www.npmjs.com/search?q=cra-template-*"><code>cra-template-[template-name]</code></a></p>
+<h2 id="create-react-app做了什么"><a href="#create-react-app做了什么" class="headerlink" title="create-react-app做了什么"></a><code>create-react-app</code>做了什么</h2><p><a target="_blank" rel="noopener" href="https://create-react-app.dev/docs/getting-started/#quick-start"><code>create-react-app</code></a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://create-react-app.dev/docs/getting-started/">Getting Started | Create React App</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://natexub.github.io/2020/07/30/new-react/" data-id="clt6mrpj7003olkc67eja9l2u" data-title="新建React项目" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-lodash" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/11/22/lodash/" class="article-date">
+  <time class="dt-published" datetime="2019-11-22T10:56:32.000Z" itemprop="datePublished">2019-11-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/11/22/lodash/">Lodash 使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://www.lodashjs.com/">中文文档</a>|<a target="_blank" rel="noopener" href="https://lodash.com/docs/">英文文档</a></p>
+<h3 id="1-依赖和引入"><a href="#1-依赖和引入" class="headerlink" title="1. 依赖和引入"></a>1. 依赖和引入</h3><h4 id="1-1-Ant-Design"><a href="#1-1-Ant-Design" class="headerlink" title="1.1 Ant Design"></a>1.1 Ant Design</h4><p>通过查看Ant Design Vue 的依赖(<code>package.json</code>)发现，Antdv已经对Lodash进行了依赖。而且antd默认通过<a target="_blank" rel="noopener" href="https://github.com/ant-design/babel-plugin-import#readme">babel-plugin-import</a> 插件来实现<a target="_blank" rel="noopener" href="https://ant.design/docs/react/getting-started-cn#%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD">按需加载</a>。所以可以跳过调整依赖步骤，直接使用即可(方法一)。</p>
+<h5 id="1-1-1-方法一"><a href="#1-1-1-方法一" class="headerlink" title="1.1.1 方法一"></a>1.1.1 方法一</h5><p>既然Antd已经添加了对Lodash的依赖,直接对node_modules中的lodash引用使用即可:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> add <span class="keyword">from</span> <span class="string">&#x27;lodash/add&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; isEqual &#125; <span class="keyword">from</span> <span class="string">&#x27;lodash&#x27;</span></span><br><span class="line"><span class="keyword">import</span> _ <span class="keyword">from</span> <span class="string">&#x27;lodash&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">add</span>(<span class="number">1</span>, <span class="number">2</span>), <span class="title function_">isEqual</span>(result, <span class="number">3</span>)) <span class="comment">//3 true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(_.<span class="title function_">times</span>(<span class="number">3</span>, <span class="title class_">String</span>))<span class="comment">// =&gt; [&#x27;0&#x27;, &#x27;1&#x27;, &#x27;2&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>缺点: IDE没有在当前模块的package.json所写明的依赖中找到<code>lodash/add</code>所以会有不规范提示。要消除提示在当前项目的<code>package.json</code>中再添加对lodash 的依赖即可。</li>
+</ul>
+<h5 id="1-1-2-方法二"><a href="#1-1-2-方法二" class="headerlink" title="1.1.2 方法二"></a>1.1.2 方法二</h5><p>先在<code>package.json</code>中添加依赖</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;dependencies&quot;</span>: &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="string">&quot;lodash.add&quot;</span>: <span class="string">&quot;^4.5.0&quot;</span>,</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> add <span class="keyword">from</span> <span class="string">&#x27;lodash.add&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = <span class="title function_">add</span>(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result) <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+<p>Ant design pro的源码中就采用方法二对偶尔使用的lodash方法进行引用使用。</p>
+<ul>
+<li>缺点 相关库文件作为独立于lodash的模块引用可能徒增打包大小, 比如<code>lodash.add</code>和<code>lodash/add</code>会被分贝打包到两个Trunk中。官方在<a target="_blank" rel="noopener" href="https://lodash.com/per-method-packages">Per Method Packages</a>中写明不鼓励使用这些模块包。(当然根据所开发web应用的使用场景，如果一两个函数几k的大小不会影响很大，没必要花精力过早优化)</li>
+</ul>
+<h4 id="1-2-Antdv外的情况"><a href="#1-2-Antdv外的情况" class="headerlink" title="1.2 Antdv外的情况"></a>1.2 Antdv外的情况</h4><p>Lodash完整库体积不小，但是使用时只会涉及到其中的小部分，引入使用时就需要考虑需不需要按需引用。同时大量引用使用lodash时还要考虑引用造成的维护问题。Antd默认通过<a target="_blank" rel="noopener" href="https://github.com/ant-design/babel-plugin-import#readme">babel-plugin-import</a>来实现了<a target="_blank" rel="noopener" href="https://ant.design/docs/react/getting-started-cn#%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD">按需加载</a>，所以不需要考虑这种情况。如果按照官方文档的说法，还是要探究一下引用的方式。</p>
+<p>按需引用不是说考虑添加依赖的是不是太多，而是说考虑打包后的体积是不是够轻，因为添加的依赖只有部分会被Webpack拿去打包。要分析打包大小vue-cli可以使用脚本<code>&quot;vue-cli-service build --report</code>, 这是<a target="_blank" rel="noopener" href="https://cli.vuejs.org/zh/guide/cli-service.html#vue-cli-service-build">vue-cli</a>对<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/webpack-bundle-analyzer">webpack-bundle-analyzer</a>的封装</p>
+<h5 id="1-2-1-在不用额外插件的情况下可以有三种方式来引用"><a href="#1-2-1-在不用额外插件的情况下可以有三种方式来引用" class="headerlink" title="1.2.1 在不用额外插件的情况下可以有三种方式来引用"></a>1.2.1 在不用额外插件的情况下可以有三种方式来引用</h5><ol>
+<li><p>引入整个Lib</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> _ <span class="keyword">from</span> <span class="string">&#x27;lodash&#x27;</span>;</span><br><span class="line"></span><br><span class="line">_.<span class="title function_">add</span>(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>优点</strong>: 只需要写一行引用</p>
+</li>
+<li><p><strong>缺点</strong>:  会导致整个库都被打包，而且具体引用变得不清晰使代码可读性变差,还会。</p>
+</li>
+</ul>
+</li>
+<li><p>通过大括号来引入特定的方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; add, tail, times, uniq &#125; <span class="keyword">from</span> <span class="string">&#x27;lodash&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">add</span>(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>优点</strong>: 只需要写一行引用，可读性强一点使用<code>add()</code>而不是<code>_.add()</code></p>
+</li>
+<li><p><strong>缺点</strong>: 仍然会导致整个库都被打包，并且当我们代码引用变动时还需要去维护这条引用语句</p>
+</li>
+</ul>
+</li>
+<li><p>每个方法通过每个函数模块单独引入(<a target="_blank" rel="noopener" href="https://lodash.com/per-method-packages">Per Method Packages</a>)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> add <span class="keyword">from</span> <span class="string">&#x27;lodash/map&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> tail <span class="keyword">from</span> <span class="string">&#x27;lodash/tail&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> times <span class="keyword">from</span> <span class="string">&#x27;lodash/times&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> uniq <span class="keyword">from</span> <span class="string">&#x27;lodash/uniq&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>另外有一种和这个方法相同效果的一种方法。Lodash中的函数在NPM仓库中都有一个单独的发布模块(<a target="_blank" rel="noopener" href="https://www.npmjs.com/search?q=lodash">NPM: results for ‘lodash’</a>)，当然前提是在package.json中写明引入的具体函数模块的依赖。同样的写法就成了:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> add <span class="keyword">from</span> <span class="string">&#x27;lodash.map&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> tail <span class="keyword">from</span> <span class="string">&#x27;lodash.tail&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> times <span class="keyword">from</span> <span class="string">&#x27;lodash.times&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> uniq <span class="keyword">from</span> <span class="string">&#x27;lodash.uniq&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>优点</strong>: 可以得到最小的打包，可使用<code>add()</code>而不是<code>_.add()</code>，可读性强一点。</p>
+</li>
+<li><p><strong>缺点</strong>: 当我们代码引用变动时, 要维护在文件中的import，用函数模块方式的话还要维护在<code>package.json</code>中的模块依赖，很麻烦。同时一个文件中太多行的引用让可读性变差。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>在简单场景下，方式3的两个方法足以按需加载的问题。</strong>但是我们不得不在一个文件中引入使用大量Lodash方时，带来的繁琐的维护就需要考虑其他的方法。</p>
+<h5 id="1-2-2-使用插件"><a href="#1-2-2-使用插件" class="headerlink" title="1.2.2 使用插件:"></a>1.2.2 使用插件:</h5><p>通过使用插件: <code>Lodash-es</code> ，<code>Lodash</code>是采用的往全局对象(window)上挂载一个复杂对象的方法，而<code>Lodash-es</code>就是将单个方法export出来的方法。所以说<code>Lodash</code>不支持tree-shaking，我们按需加载需要使用<code>Lodash-es</code>。也就是官方文档<a target="_blank" rel="noopener" href="https://www.lodashjs.com/#%E6%A8%A1%E5%9D%97%E6%A0%BC%E5%BC%8F">Module Formats</a>中说的<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/lodash-es">lodash-es</a> + <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/babel-plugin-lodash">babel-plugin-lodash</a> + <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/lodash-webpack-plugin">lodash-webpack-plugin</a>组合的方式。</p>
+<p>完整的Lodash-es的bundle大小有256K，babel插件<code>babel-plugin-lodash</code>的原理就是根据全量导入的变量的调用链, 分析所需要的模块, 然后按需导入.</p>
+<p>而lodash-webpack-plugin是做进一步缩小。</p>
+<blockquote>
+<p>Create smaller Lodash builds by replacing <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/lodash-webpack-plugin#feature-sets">feature sets</a> of modules with <a target="_blank" rel="noopener" href="https://lodash.com/docs#noop">noop</a>, <a target="_blank" rel="noopener" href="https://lodash.com/docs#identity">identity</a>, or simpler alternatives.</p>
+<p>This plugin complements <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/babel-plugin-lodash">babel-plugin-lodash</a> by shrinking its cherry-picked builds even further!</p>
+</blockquote>
+<p><strong>配置方法(Vue-CLI):</strong></p>
+<p>安装依赖</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add lodash-webpack-plugin  babel-plugin-lodash  --dev</span><br></pre></td></tr></table></figure>
+
+<p>在vue.config.js中配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//按需加载lodash</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">LodashModuleReplacementPlugin</span> = <span class="built_in">require</span>(<span class="string">&quot;lodash-webpack-plugin&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">chainWebpack</span>: <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//按需加载lodash</span></span><br><span class="line">    <span class="keyword">if</span> (process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&quot;production&quot;</span>) &#123;</span><br><span class="line">      config.<span class="title function_">plugin</span>(<span class="string">&quot;loadshReplace&quot;</span>).<span class="title function_">use</span>(<span class="keyword">new</span> <span class="title class_">LodashModuleReplacementPlugin</span>());</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在babel.config.js中配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="string">&quot;plugins&quot;</span>:[<span class="string">&quot;lodash&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>那同样是通过Babel插件转换实现的按需导入，阿里的<a target="_blank" rel="noopener" href="https://github.com/ant-design/babel-plugin-import#readme">babel-plugin-import</a>和<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/babel-plugin-lodash">babel-plugin-lodash</a> 原理有什么不同呢？</p>
+<p><code>babel-plugin-import</code>是阿里为了<code>antd</code>组件库量身定做的一套转换工作, 不过在后续的更新中, 适用的范围越来越广. 它除了会导入目标组件外, 还支持导入组件附属样式文件. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Button</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;antd&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Button</span>&gt;</span>xxxx<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span>);</span><br></pre></td></tr></table></figure>
+
+<p>转换成:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _button = <span class="built_in">require</span>(<span class="string">&#x27;antd/lib/button&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">require</span>(<span class="string">&#x27;antd/lib/button/style/css&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">_button</span>&gt;</span>xxxx<span class="tag">&lt;/<span class="name">_button</span>&gt;</span></span>);</span><br></pre></td></tr></table></figure>
+
+<p><code>babel-plugin-lodash</code>插件会将</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> _ <span class="keyword">from</span> <span class="string">&#x27;lodash&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; add &#125; <span class="keyword">from</span> <span class="string">&#x27;lodash/fp&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> addOne = <span class="title function_">add</span>(<span class="number">1</span>)</span><br><span class="line">_.<span class="title function_">map</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], addOne)</span><br></pre></td></tr></table></figure>
+
+<p>转换成</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> _add <span class="keyword">from</span> <span class="string">&#x27;lodash/fp/add&#x27;</span></span><br><span class="line"><span class="keyword">import</span> _map <span class="keyword">from</span> <span class="string">&#x27;lodash/map&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> addOne = <span class="title function_">_add</span>(<span class="number">1</span>)</span><br><span class="line"><span class="title function_">_map</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], addOne)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用插件的<strong>缺点</strong>: 当涉及的模块繁多时，全量构建时间就会大大延长，而同时对打包进行 gzip压缩使打包的体积差异可以忽略不计。这时候就要考虑使用插件是否值得。</p>
+<h3 id="模块组成"><a href="#模块组成" class="headerlink" title="模块组成"></a>模块组成</h3><ul>
+<li>Array 数组</li>
+<li>Collocation 集合</li>
+<li>Date 日期</li>
+<li>Function函数</li>
+<li>Lang 语言</li>
+<li>Math 数学</li>
+<li>Number 数字</li>
+<li>Object 对象</li>
+<li>Seq 链式调用</li>
+<li>String 字符串</li>
+<li>Util 使用函数</li>
+<li>Properties 和 Method (不常用)</li>
+</ul>
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a><a target="_blank" rel="noopener" href="https://xiaoxiami.gitbook.io/lodash/summary">目录</a></h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://natexub.github.io/2019/11/22/lodash/" data-id="clt6mrpiu002ulkc623wogbco" data-title="Lodash 使用" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-git" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/11/08/git/" class="article-date">
+  <time class="dt-published" datetime="2019-11-07T20:31:36.000Z" itemprop="datePublished">2019-11-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/11/08/git/">版本管理Git</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><code>--</code>跟全名长参数，<code>-</code>跟等价的缩写短参数。比如 -d 和 –delete</p>
+<h2 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git clone [--template=&lt;template_directory&gt;]</span><br><span class="line">	  [-l] [-s] [--no-hardlinks] [-q] [-n] [--bare] [--mirror]</span><br><span class="line">	  [-o &lt;name&gt;] [-b &lt;name&gt;] [-u &lt;upload-pack&gt;] [--reference &lt;repository&gt;]</span><br><span class="line">	  [--dissociate] [--separate-git-dir &lt;git dir&gt;]</span><br><span class="line">	  [--depth &lt;depth&gt;] [--[no-]single-branch] [--no-tags]</span><br><span class="line">	  [--recurse-submodules[=&lt;pathspec&gt;]] [--[no-]shallow-submodules]</span><br><span class="line">	  [--[no-]remote-submodules] [--jobs &lt;n&gt;] [--sparse]</span><br><span class="line">	  [--filter=&lt;filter&gt;] [--] &lt;repository&gt;</span><br><span class="line">	  [&lt;directory&gt;]</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用示例"><a href="#常用示例" class="headerlink" title="常用示例"></a>常用示例</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h2><p><strong>git add</strong> 命令可将该文件添加到暂存区。</p>
+<h3 id="常用示例-1"><a href="#常用示例-1" class="headerlink" title="常用示例"></a>常用示例</h3><h4 id="添加当前目录下的所有文件到暂存区"><a href="#添加当前目录下的所有文件到暂存区" class="headerlink" title="添加当前目录下的所有文件到暂存区"></a>添加当前目录下的所有文件到暂存区</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<h2 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a>git push</h2><p><a target="_blank" rel="noopener" href="https://git-scm.com/docs/git-push">Git - git-push Documentation</a></p>
+<p>使用本地 refs 更新远程 refs</p>
+<h3 id="常用示例-2"><a href="#常用示例-2" class="headerlink" title="常用示例"></a>常用示例</h3><p>将本地的 master 分支推送到 origin 主机的 master 分支。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+<p>等价于</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master:master</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h2 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h2><p><a target="_blank" rel="noopener" href="https://git-scm.com/docs/git-branch">Git - git-branch Documentation</a></p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">git branch [--color[=&lt;when&gt;] | --no-color] [--show-current]</span><br><span class="line">	[-v [--abbrev=&lt;n&gt; | --no-abbrev]]</span><br><span class="line">	[--column[=&lt;options&gt;] | --no-column] [--sort=&lt;key&gt;]</span><br><span class="line">	[--merged [&lt;commit&gt;]] [--no-merged [&lt;commit&gt;]]</span><br><span class="line">	[--contains [&lt;commit&gt;]] [--no-contains [&lt;commit&gt;]]</span><br><span class="line">	[--points-at &lt;object&gt;] [--format=&lt;format&gt;]</span><br><span class="line">	[(-r | --remotes) | (-a | --all)]</span><br><span class="line">	[--list] [&lt;pattern&gt;…​]</span><br><span class="line">git branch [--track[=(direct|inherit)] | --no-track] [-f]</span><br><span class="line">	[--recurse-submodules] &lt;branchname&gt; [&lt;start-point&gt;]</span><br><span class="line">git branch (--set-upstream-to=&lt;upstream&gt; | -u &lt;upstream&gt;) [&lt;branchname&gt;]</span><br><span class="line">git branch --unset-upstream [&lt;branchname&gt;]</span><br><span class="line">git branch (-m | -M) [&lt;oldbranch&gt;] &lt;newbranch&gt;</span><br><span class="line">git branch (-c | -C) [&lt;oldbranch&gt;] &lt;newbranch&gt;</span><br><span class="line">git branch (-d | -D) [-r] &lt;branchname&gt;…​</span><br><span class="line">git branch --edit-description [&lt;branchname&gt;]</span><br></pre></td></tr></table></figure>
+
+
+<p>&#96;&#96;–move<code> 加上</code>–force<code>表示即使新分支名称已经存在，也允许重命名分支。 </code>-M<code>是</code>–move –force&#96;的缩写。</p>
+<h3 id="常用示例-3"><a href="#常用示例-3" class="headerlink" title="常用示例"></a>常用示例</h3><h4 id="修改分支名称"><a href="#修改分支名称" class="headerlink" title="修改分支名称"></a>修改分支名称</h4><p>修改当前分支master的名称为<code>main</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -m main</span><br></pre></td></tr></table></figure>
+
+<p>提交到远程（因为远程分支不存在，则会被新建，并追踪）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
+
+<p>删除远程之前的分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin -d master</span><br></pre></td></tr></table></figure>
+<p>等同于</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin --delete master</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><h3 id="创建一个新项目并推到远程仓库"><a href="#创建一个新项目并推到远程仓库" class="headerlink" title="创建一个新项目并推到远程仓库"></a>创建一个新项目并推到远程仓库</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# template-react-with-typescript&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin git@github.com:natexub/template-react-with-typescript.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
+<h3 id="push-an-existing-repository-from-the-command-lin"><a href="#push-an-existing-repository-from-the-command-lin" class="headerlink" title="push an existing repository from the command lin"></a>push an existing repository from the command lin</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:natexub/template-react-with-typescript.git</span><br><span class="line">git branch -M main</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
+<h2 id="git-merge-和-rebase"><a href="#git-merge-和-rebase" class="headerlink" title="git merge 和 rebase"></a>git merge 和 rebase</h2><p>merge会保存完整的历史记录。针对容易反复出现的问题，完整的历史记录很重要，他保存了这个错误被反复纠正的过程，后来者可以通过查看历史来避免再次犯错。</p>
+<p>rebase会通过修改历史记录，形成干净整洁的提交历史。在本地仓库拉取代码时进行</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html">Git远程操作详解 - 阮一峰的网络日志</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://natexub.github.io/2019/11/08/git/" data-id="clt6mrpid0019lkc6c1t7fdmv" data-title="版本管理Git" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-new-git" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/11/08/new-git/" class="article-date">
+  <time class="dt-published" datetime="2019-11-07T20:31:36.000Z" itemprop="datePublished">2019-11-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/11/08/new-git/">Git安装和配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>[[git]]</p>
+<h3 id="便携版安装问题"><a href="#便携版安装问题" class="headerlink" title="便携版安装问题"></a>便携版安装问题</h3><p>配置文件位置：<code>C:\Users\&lt;user_name&gt;\.gitconfig</code></p>
+<h2 id="关掉换行符自动转换"><a href="#关掉换行符自动转换" class="headerlink" title="关掉换行符自动转换"></a>关掉换行符自动转换</h2><p>将配置项<code>core.autocrlf</code>设置为<code>false</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf false</span><br></pre></td></tr></table></figure>
+
+<p>见[[newline | 换行符]]和<a target="_blank" rel="noopener" href="https://git-scm.com/docs/git-config#Documentation/git-config.txt-coresafecrlf">Git - git-config Documentation</a></p>
+<p>不同平台对文件保存时换行的标准规定不一。</p>
+<p>Git 作为一个源码版本控制系统，以一种（我看起来）有点越俎代庖、自作聪明的态度，对这个问题提供了一个“解决方案”。</p>
+<p>安装好 GitHub 的 Windows 客户端之后，这个功能默认处于“自动模式”。当你在checkout或者add时，Git 会尝试将 UNIX 换行符（LF）替换为 Windows 的换行符（CRLF）；当你在提交文件时，它又试图将 CRLF 替换为 LF。</p>
+<p>有些情况会发生，签出时把 UNIX 风格转成了 Windows 风格但提交时并没有转换的情况。造成整个文件不必要的修改提交，破坏这个文件的修改历史。</p>
+<p>比如中文后跟着换行符。</p>
+<h3 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h3><p>没有关闭默认autocrlf，在我Add 文件时出现警告：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> D:\Projects\template<span class="literal">-react-with-typescript</span>&gt; git add .</span><br><span class="line">warning: LF will be replaced by CRLF <span class="keyword">in</span> .gitignore.</span><br><span class="line">The file will have its original line endings <span class="keyword">in</span> your working directory</span><br><span class="line">warning: LF will be replaced by CRLF <span class="keyword">in</span> README.md.</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装器安装"><a href="#安装器安装" class="headerlink" title="安装器安装"></a>安装器安装</h3><h4 id="安装组件"><a href="#安装组件" class="headerlink" title="安装组件"></a>安装组件</h4><p><img src="/git-setup-1.png" alt="git-setup-1"></p>
+<ul>
+<li>大文件支持<a target="_blank" rel="noopener" href="https://git-lfs.com/">Git Large File Storage</a></li>
+<li>向Windows terminal 添加一份 Git bash 的配置文件。<br>代替手动配置：<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// windows terminal setting.json</span></span><br><span class="line"><span class="attr">&quot;terminal.integrated.defaultProfile.windows&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gitbash&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;terminal.integrated.shell.windows&quot;</span><span class="punctuation">:</span><span class="string">&quot;E:\app\git\Git\bin\bash.exe&quot;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<img src="/git-setup-1-1.png" alt="git-setup-1-1"></li>
+</ul>
+<h4 id="默认编辑器"><a href="#默认编辑器" class="headerlink" title="默认编辑器"></a>默认编辑器</h4><p><img src="/git-setup-2.png" alt="git-setup-2"><br>代替：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// .gitconfig</span><br><span class="line">export EDITOR=&quot;code --wait&quot;</span><br></pre></td></tr></table></figure>
+<p>或者:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.editor &quot;code --wait&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="默认分支名"><a href="#默认分支名" class="headerlink" title="默认分支名"></a>默认分支名</h4><p><img src="/git-setup-3.png" alt="git-setup-3"><br>默认分支名。由于 BLM 运动，master 政治不正确了。</p>
+<h4 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h4><p><img src="/git-setup-4.png" alt="git-setup-4"></p>
+<p>只添加 Git 相关。Unix 相关的工具可以通过 windows terminal 中的 Git bash profile<br> 来访问，而不是把一堆MINGW64工具直接添加到Path，避免引入冲突。</p>
+<h4 id="选择Git使用的SSH"><a href="#选择Git使用的SSH" class="headerlink" title="选择Git使用的SSH"></a>选择Git使用的SSH</h4><p><img src="/git-setup-5.png" alt="git-setup-5"></p>
+<h4 id="选择HTTPS使用的后端"><a href="#选择HTTPS使用的后端" class="headerlink" title="选择HTTPS使用的后端"></a>选择HTTPS使用的后端</h4><p><img src="/git-setup-6.png" alt="git-setup-6"></p>
+<h4 id="行尾符转换"><a href="#行尾符转换" class="headerlink" title="行尾符转换"></a>行尾符转换</h4><p><img src="/git-setup-7.png" alt="git-setup-7"></p>
+<h4 id="选择Git-bash默认的Terminal"><a href="#选择Git-bash默认的Terminal" class="headerlink" title="选择Git bash默认的Terminal"></a>选择Git bash默认的Terminal</h4><p><img src="/git-setup-8.png" alt="git-setup-8"><br>直接使用Windows Terminal</p>
+<h4 id="选择Git-pull默认行为"><a href="#选择Git-pull默认行为" class="headerlink" title="选择Git pull默认行为"></a>选择Git pull默认行为</h4><p><img src="/git-setup-9.png" alt="git-setup-9"></p>
+<h4 id="证书管理工具"><a href="#证书管理工具" class="headerlink" title="证书管理工具"></a>证书管理工具</h4><p><img src="/git-setup-10.png" alt="git-setup-10"></p>
+<h4 id="额外选项"><a href="#额外选项" class="headerlink" title="额外选项"></a>额外选项</h4><p><img src="/git-setup-11.png" alt="git-setup-11"></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/954560/how-does-git-handle-symbolic-links">version control - How does Git handle symbolic links? - Stack Overflow</a><br><a target="_blank" rel="noopener" href="https://git-scm.com/docs/git-config#Documentation/git-config.txt-coresymlinks">Git - git-config Documentation</a></p>
+<h4 id="配置实验性选项"><a href="#配置实验性选项" class="headerlink" title="配置实验性选项"></a>配置实验性选项</h4><h2 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h2><h2 id="配置用户"><a href="#配置用户" class="headerlink" title="配置用户"></a>配置用户</h2><h2 id="配置文件备忘"><a href="#配置文件备忘" class="headerlink" title="配置文件备忘"></a>配置文件备忘</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[filter &quot;lfs&quot;]</span><br><span class="line">	clean = git-lfs clean -- %f</span><br><span class="line">	smudge = git-lfs smudge -- %f</span><br><span class="line">	process = git-lfs filter-process</span><br><span class="line">	required = true</span><br><span class="line">[user]</span><br><span class="line">	name = Nate</span><br><span class="line">	email = xuyanbiaoccc@126.com</span><br><span class="line">[http]</span><br><span class="line">	proxy = socks5://127.0.0.1:10808</span><br><span class="line">[https]</span><br><span class="line">	proxy = socks5://127.0.0.1:10808</span><br><span class="line">[core]</span><br><span class="line">    autocrlf = false</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://docs.github.com/en/get-started/getting-started-with-git">Getting started with Git - GitHub Docs</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://natexub.github.io/2019/11/08/new-git/" data-id="clt6mrpiy0033lkc612bt9h84" data-title="Git安装和配置" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-npm" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/11/08/npm/" class="article-date">
+  <time class="dt-published" datetime="2019-11-07T20:13:38.000Z" itemprop="datePublished">2019-11-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/11/08/npm/">npm</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="NPM-配置"><a href="#NPM-配置" class="headerlink" title="NPM 配置"></a>NPM 配置</h2><h3 id="npm配置文件"><a href="#npm配置文件" class="headerlink" title="npm配置文件"></a>npm配置文件</h3><p>npm通过三种方式获取配置：</p>
+<ul>
+<li>命令行</li>
+<li>环境变量</li>
+<li><code>npmrc</code>文件</li>
+</ul>
+<p><code>npm config</code>命令会修改全局<code>npmrc</code>文件。<code>npmrc</code>文件有多个：</p>
+<ul>
+<li>项目下 (<code>/path/to/my/project/.npmrc</code>)</li>
+<li>用户目录(<code>~/.npmrc</code>或者windows下的<code>%USERPROFILE%\.npmrc</code>)</li>
+<li>global config file ($PREFIX&#x2F;etc&#x2F;npmrc)</li>
+<li>npm安装位置下 (&#x2F;path&#x2F;to&#x2F;npm&#x2F;npmrc)，不可更改，主要是为了分发标准覆盖默认配置。<br>这些文件中的每一个都会被加载，按优先级顺序解析，从上到下优先级递减，优先级高的配置会覆盖优先级低的配置。</li>
+</ul>
+<h3 id="npm可配置项"><a href="#npm可配置项" class="headerlink" title="npm可配置项"></a>npm可配置项</h3><p>全部可配置项见 <a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v8/using-npm/config/">config | npm Docs</a>。<br>通常需要理解的配置项目有：</p>
+<h4 id="prefix-全局项目的安装位置。"><a href="#prefix-全局项目的安装位置。" class="headerlink" title="prefix - 全局项目的安装位置。"></a><code>prefix</code> - 全局项目的安装位置。</h4><ul>
+<li>默认值: 全局模式时，node可执行程序的位置。In local mode, the nearest parent folder containing either a package.json file or a node_modules folder.</li>
+<li>Type: Path</li>
+</ul>
+<p>上文中给Node.js配置了环境变量，把node的执行文件目录追加进了<code>Path</code>。默认<code>prefix</code>设置成和它在一起，使得这些全局项目的可执行文件同时可被找到。如果遇到某些成功全局安装的包却在命令行中不可用，就要考虑这里的问题。</p>
+<h4 id="cache-npm-cache目录路径"><a href="#cache-npm-cache目录路径" class="headerlink" title="cache - npm cache目录路径"></a><code>cache</code> - npm cache目录路径</h4><ul>
+<li>默认值: Windows: <code>%LocalAppData%\npm-cache</code>, Posix: <code>~/.npm</code></li>
+<li>Type: Path</li>
+</ul>
+<h4 id="registry-npm仓库的base-URL"><a href="#registry-npm仓库的base-URL" class="headerlink" title="registry - npm仓库的base URL"></a><code>registry</code> - npm仓库的base URL</h4><ul>
+<li>默认值：<code>&quot;https://registry.npmjs.org/&quot;</code></li>
+<li>Type: URL</li>
+</ul>
+<h2 id="NPM脚本"><a href="#NPM脚本" class="headerlink" title="NPM脚本"></a>NPM脚本</h2><p><a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v9/commands/npm-run-script">npm-run-script | npm Docs</a></p>
+<p>默认根据平台选择运行脚本的Shell</p>
+<p>除了预先存在的<code>PATH</code>变量，<code>npm run</code>还会向<code>PATH</code>变量追加项目路径下的<code>node_modules/.bin</code>。这样项目安装的依赖下的可执行文件可以在没有<code>node_modules/.bin</code>前缀的情况下使用。例如：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tap test/*.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>可以代替</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node_modules/.bin/tap test/*.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="NPM-路径问题"><a href="#NPM-路径问题" class="headerlink" title="NPM 路径问题"></a>NPM 路径问题</h2><p>见<a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v9/configuring-npm/folders#executables">folders | npm Docs</a></p>
+<h2 id="NPM-报错"><a href="#NPM-报错" class="headerlink" title="NPM 报错"></a>NPM 报错</h2><h3 id="npm-audit报错"><a href="#npm-audit报错" class="headerlink" title="npm audit报错"></a>npm audit报错</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\Users\xuyan&gt; npm install <span class="literal">-g</span> nrm</span><br><span class="line">npm WARN deprecated har<span class="literal">-validator</span>@<span class="number">5.1</span>.<span class="number">5</span>: this library is no longer supported</span><br><span class="line">npm WARN deprecated uuid@<span class="number">3.4</span>.<span class="number">0</span>: Please upgrade  to version <span class="number">7</span> or higher.  Older versions may use Math.random() <span class="keyword">in</span> certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math<span class="literal">-random</span> <span class="keyword">for</span> details.</span><br><span class="line">npm WARN deprecated request@<span class="number">2.88</span>.<span class="number">2</span>: request has been deprecated, see https://github.com/request/request/issues/<span class="number">3142</span></span><br><span class="line"></span><br><span class="line">changed <span class="number">73</span> packages, and audited <span class="number">317</span> packages <span class="keyword">in</span> <span class="number">5</span>s</span><br><span class="line"></span><br><span class="line"><span class="number">6</span> vulnerabilities (<span class="number">4</span> high, <span class="number">2</span> critical)</span><br><span class="line"></span><br><span class="line">To address all issues, run:</span><br><span class="line">  npm audit fix</span><br><span class="line"></span><br><span class="line">Run `npm audit` <span class="keyword">for</span> details.</span><br></pre></td></tr></table></figure>
+
+<p>npm 审计报错，不用管。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://natexub.github.io/2019/11/08/npm/" data-id="clt6mrpjc0044lkc6fuueh70g" data-title="npm" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-new-flutter" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/10/27/new-flutter/" class="article-date">
+  <time class="dt-published" datetime="2019-10-27T10:38:35.000Z" itemprop="datePublished">2019-10-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/New-to/">New to</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/10/27/new-flutter/">new-flutter</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="配置PUB-环境变量"><a href="#配置PUB-环境变量" class="headerlink" title="配置PUB 环境变量"></a>配置PUB 环境变量</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://natexub.github.io/2019/10/27/new-flutter/" data-id="clt6mrpiz0036lkc6etq78gc5" data-title="new-flutter" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dart/" rel="tag">Dart</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flutter/" rel="tag">Flutter</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-flutter-android" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/10/21/flutter-android/" class="article-date">
+  <time class="dt-published" datetime="2019-10-21T14:25:56.000Z" itemprop="datePublished">2019-10-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/flutter/">flutter</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/10/21/flutter-android/">Flutter和Android</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://flutter.cn/docs/get-started/flutter-for/android-devs">给 Android 开发者的 Flutter 指南 - Flutter 中文文档 - Flutter 中文开发者网站 - Flutter</a></li>
+</ol>
+<h2 id="控件对应"><a href="#控件对应" class="headerlink" title="控件对应"></a>控件对应</h2><p>Android开发常用控件在Flutter中的对应。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Android 控件</th>
+<th align="right">Flutter widget</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">View</td>
+<td align="right">Widget</td>
+</tr>
+<tr>
+<td align="left">LinearLayout</td>
+<td align="right">Column, Row</td>
+</tr>
+<tr>
+<td align="left">RelativeLayout</td>
+<td align="right">Column+Row+Stack</td>
+</tr>
+<tr>
+<td align="left">ScrollView, RecyclerView, ListView</td>
+<td align="right">ListView</td>
+</tr>
+<tr>
+<td align="left">TextView</td>
+<td align="right">Text</td>
+</tr>
+<tr>
+<td align="left">EditText</td>
+<td align="right">TextFeild</td>
+</tr>
+</tbody></table>
+<h2 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h2><h3 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h3><h4 id="编译项目时，系统日志和Gradle结果混合在一起，如何把他们分开？"><a href="#编译项目时，系统日志和Gradle结果混合在一起，如何把他们分开？" class="headerlink" title="编译项目时，系统日志和Gradle结果混合在一起，如何把他们分开？"></a>编译项目时，系统日志和Gradle结果混合在一起，如何把他们分开？</h4><h5 id="问题表现"><a href="#问题表现" class="headerlink" title="问题表现"></a>问题表现</h5><p>Android Studio Dolphin | 2021.3.1 Patch 1<br>Gradle 7.4<br>![[flutter-log.png]]</p>
+<h5 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h5><p>暂无</p>
+<h3 id="Flutter-doctor"><a href="#Flutter-doctor" class="headerlink" title="Flutter doctor"></a>Flutter doctor</h3><h4 id="找不到SDK"><a href="#找不到SDK" class="headerlink" title="找不到SDK"></a>找不到SDK</h4><h5 id="问题表现-1"><a href="#问题表现-1" class="headerlink" title="问题表现"></a>问题表现</h5><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[!] Android toolchain - develop <span class="keyword">for</span> Android devices</span><br><span class="line">    X Unable to locate Android SDK.</span><br></pre></td></tr></table></figure>
+
+<h5 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h5><p>未把Android SDK放到默认路径。</p>
+<h5 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h5><p>指定Android SDK位置</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter config --android-sdk D:\env\Android\Sdk</span><br></pre></td></tr></table></figure>
+
+<h5 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h5><p><a target="_blank" rel="noopener" href="https://docs.flutter.dev/reference/flutter-cli#flutter-commands">flutter: The Flutter command-line tool | Flutter</a></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">PS D:\Projects\flutter_demo&gt; flutter <span class="built_in">help</span> config                            </span><br><span class="line">Configure Flutter settings.</span><br><span class="line"></span><br><span class="line">To remove a setting, configure it to an empty string.</span><br><span class="line"></span><br><span class="line">The Flutter tool anonymously reports feature usage statistics and basic crash reports to <span class="built_in">help</span> improve Flutter tools over <span class="built_in">time</span>. See Google&#x27;s privacy policy:https://www.google.com/intl/en/policies/privacy/aster and beta channels.</span><br><span class="line"></span><br><span class="line">    --[no-]enable-android                       Enable or disable Flutter <span class="keyword">for</span> Android.This setting will take effect on the master, beta, and stable channels.</span><br><span class="line">    --[no-]enable-ios                           Enable or disable Flutter <span class="keyword">for</span> iOS. This setting will take effect on the master, beta, and stable channels.</span><br><span class="line">    --[no-]enable-fuchsia                       Enable or disable Flutter <span class="keyword">for</span> Fuchsia. This setting will take effect on the master channel.</span><br><span class="line">    --[no-]enable-custom-devices                Enable or disable Early support <span class="keyword">for</span> custom device types. This setting will take effect on the master, beta, and stable channels.</span><br><span class="line">    --clear-features                            Remove all configured features and <span class="built_in">restore</span> them to the default values.</span><br><span class="line"></span><br><span class="line">Run &quot;flutter <span class="built_in">help</span>&quot; to see global options.</span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">Settings:</span></span><br><span class="line"><span class="function">  <span class="title">android</span>-<span class="title">sdk</span>: <span class="title">D</span>:\<span class="title">env</span>\<span class="title">Android</span>\<span class="title">Sdk</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">Analytics</span> <span class="title">reporting</span> <span class="title">is</span> <span class="title">currently</span> <span class="title">enabled</span>.</span></span><br><span class="line"><span class="function"></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="HTTP-可访问性检查错误"><a href="#HTTP-可访问性检查错误" class="headerlink" title="HTTP 可访问性检查错误"></a>HTTP 可访问性检查错误</h4><h5 id="问题表现-2"><a href="#问题表现-2" class="headerlink" title="问题表现"></a>问题表现</h5><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">X HTTP host &quot;https://maven.google.com/&quot; is <span class="keyword">not</span> reachable. Reason: An error occurred while checking the HTTP host: 信号灯超时时间已到</span><br><span class="line"></span><br><span class="line">   X HTTP host &quot;https://pub.dev/&quot; is <span class="keyword">not</span> reachable. Reason: An error occurred while checking the HTTP host: Connection terminated during handshake</span><br><span class="line">   X HTTP host &quot;https://cloud.google.com/&quot; is <span class="keyword">not</span> reachable. Reason: An error occurred while checking the HTTP host: 信号灯超时时间已到</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="问题原因-1"><a href="#问题原因-1" class="headerlink" title="问题原因"></a>问题原因</h5><p>You know</p>
+<h5 id="解决方法-2"><a href="#解决方法-2" class="headerlink" title="解决方法"></a>解决方法</h5><p>配置<code>https_proxy</code>和<code>NO_PROXY</code>环境变量。见[[cli-proxy|命令行使用代理]]</p>
+<h3 id="编译时错误-FATAL-EXCEPTION-ScreenDecorations"><a href="#编译时错误-FATAL-EXCEPTION-ScreenDecorations" class="headerlink" title="编译时错误 FATAL EXCEPTION: ScreenDecorations"></a>编译时错误 FATAL EXCEPTION: ScreenDecorations</h3><h4 id="问题表现-3"><a href="#问题表现-3" class="headerlink" title="问题表现"></a>问题表现</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Launching lib\main.dart on sdk gphone64 x86 <span class="number">64</span> <span class="keyword">in</span> debug <span class="built_in">mode</span>...</span><br><span class="line">Running Gradle task &#x27;assembleDebug&#x27;...</span><br><span class="line">E/AndroidRuntime(<span class="number">28818</span>): FATAL EXCEPTION: ScreenDecorations</span><br><span class="line">E/AndroidRuntime(<span class="number">28818</span>): Process: com.android.systemui, PID: <span class="number">28818</span></span><br><span class="line">E/AndroidRuntime(<span class="number">28818</span>): java.lang.NullPointerException: Parameter specified as non-null is null: method kotlin.jvm.internal.Intrinsics.checkNotNullParameter, parameter bottomLeft</span><br><span class="line">E/AndroidRuntime(<span class="number">28818</span>): 	<span class="built_in">at</span> com.android.systemui.statusbar.events.PrivacyDotViewController.initialize(Unknown Source:<span class="number">22</span>)</span><br><span class="line">E/AndroidRuntime(<span class="number">28818</span>): 	<span class="built_in">at</span> com.android.systemui.ScreenDecorations.setupDecorations(ScreenDecorations.java:<span class="number">315</span>)</span><br><span class="line">E/AndroidRuntime(<span class="number">28818</span>): 	<span class="built_in">at</span> com.android.systemui.ScreenDecorations.startOnScreenDecorationsThread(ScreenDecorations.java:<span class="number">252</span>)</span><br><span class="line">E/AndroidRuntime(<span class="number">28818</span>): 	<span class="built_in">at</span> com.android.systemui.ScreenDecorations.$r8$lambda$bRx4s-frKyGv-SmpobluoualBbQ(Unknown Source:<span class="number">0</span>)</span><br><span class="line">E/AndroidRuntime(<span class="number">28818</span>): 	<span class="built_in">at</span> com.android.systemui.ScreenDecorations$$ExternalSyntheticLambda2.run(Unknown Source:<span class="number">2</span>)</span><br><span class="line">E/AndroidRuntime(<span class="number">28818</span>): 	<span class="built_in">at</span> android.os.Handler.handleCallback(Handler.java:<span class="number">938</span>)</span><br><span class="line">E/AndroidRuntime(<span class="number">28818</span>): 	<span class="built_in">at</span> android.os.Handler.dispatchMessage(Handler.java:<span class="number">99</span>)</span><br><span class="line">E/AndroidRuntime(<span class="number">28818</span>): 	<span class="built_in">at</span> android.os.Looper.loopOnce(Looper.java:<span class="number">201</span>)</span><br><span class="line">E/AndroidRuntime(<span class="number">28818</span>): 	<span class="built_in">at</span> android.os.Looper.loop(Looper.java:<span class="number">288</span>)</span><br><span class="line">E/AndroidRuntime(<span class="number">28818</span>): 	<span class="built_in">at</span> android.os.HandlerThread.run(HandlerThread.java:<span class="number">67</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="检错过程"><a href="#检错过程" class="headerlink" title="检错过程"></a>检错过程</h4><p>Demo都运行不起来，那么不会是代码的问题。<br>切换AVD到Android 8版本，继续尝试。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Launching lib\main.dart on sdk gphone64 x86 64 in debug mode...</span><br><span class="line">Running Gradle task &#x27;assembleDebug&#x27;...</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>log变为卡在<code>Running Gradle task &#39;assembleDebug&#39;...</code>不动，然后我意识到<code>E/AndroidRuntime(28818)</code>什么的是Android系统的Log而不是编译的报错。</p>
+<p>接下来问题就变成了解决卡Gradle。随后我意识到我这台电脑没有手动装Gradle，那么就可能是IDE在下载Gradle过程中出了问题，或者Gradle在构建时卡在了下载依赖上。</p>
+<p>手动下载Gradle，并配置环境变量。也没有配置代理，也没有把仓库改成国内镜像，问题就解决了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://natexub.github.io/2019/10/21/flutter-android/" data-id="clt6mrpi9000ylkc69lagf1k6" data-title="Flutter和Android" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flutter/" rel="tag">Flutter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Gradle/" rel="tag">Gradle</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-android-variables" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/10/21/android-variables/" class="article-date">
+  <time class="dt-published" datetime="2019-10-21T14:23:42.000Z" itemprop="datePublished">2019-10-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/10/21/android-variables/">Android常用的环境变量</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <table>
+<thead>
+<tr>
+<th align="center">SDK环境变量</th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>ANDROID_HOME</code></td>
+<td align="left">设置 SDK 安装目录的路径。类似的<code>ANDROID_SDK_ROOT</code>也指向该目录，但已弃用。 如果继续使用，Android Studio 和 Android Gradle 插件会检查新旧变量是否一致。</td>
+</tr>
+<tr>
+<td align="center"><code>ANDROID_USER_HOME</code></td>
+<td align="left">为作为 Android SDK 一部分的工具设置用户首选项目录的路径。 默认为<code>$HOME/.android/</code>。一些较旧的工具，例如 Android Studio 4.3 及更低版本，不读取<code>ANDROID_USER_HOME</code>。 要覆盖那些旧工具的用户首选项位置，请将<code>ANDROID_SDK_HOME</code>设置为您希望在其下创建<code>.android</code>目录的父目录。</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">AVD环境变量</th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>ANDROID_EMULATOR_HOME</code></td>
+<td align="left">设置特定于用户的模拟器配置目录的路径。默认设置为 <code>$ANDROID_USER_HOME</code>。较旧的工具（如 Android Studio 4.3 及更早版本）不会读取<code>ANDROID_USER_HOME</code>，对于这些工具，默认值为<code>$ANDROID_SDK_HOME/.android</code></td>
+</tr>
+<tr>
+<td align="center"><code>ANDROID_AVD_HOME</code></td>
+<td align="left">设置包含所有 AVD 特定文件的目录的路径，这些文件大多包含非常大的磁盘映像。默认位置是 <code>$ANDROID_EMULATOR_HOME/avd/</code>。如果默认位置的磁盘空间不足，您可能需要指定新位置。</td>
+</tr>
+</tbody></table>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://developer.android.com/studio/command-line/variables">环境变量  |  Android 开发者  |  Android Developers</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.com/studio/command-line">命令行工具  |  Android 开发者  |  Android Developers</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://natexub.github.io/2019/10/21/android-variables/" data-id="clt6mrpht0003lkc63ml0ce83" data-title="Android常用的环境变量" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/6/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/">weiter &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/ECMAScript6/">ECMAScript6</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/New-to/">New to</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/interview/">interview</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/interview/javascript/">javascript</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/obsidian/">obsidian</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/secure/">secure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%A5%E9%97%A8/">入门</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统**</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%90%90%E7%A2%8E%E9%97%AE%E9%A2%98/">琐碎问题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">计算机科学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%85%8D%E7%BD%AE%E5%A4%87%E5%BF%98/">配置备忘</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/" rel="tag">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dart/" rel="tag">Dart</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/" rel="tag">Electron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flutter/" rel="tag">Flutter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gradle/" rel="tag">Gradle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jest/" rel="tag">Jest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReactNative/" rel="tag">ReactNative</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test/" rel="tag">Test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typescript/" rel="tag">Typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/" rel="tag">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/obsidian/" rel="tag">obsidian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/" rel="tag">proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/" rel="tag">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E4%BB%B6/" rel="tag">事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91/" rel="tag">并发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E8%A1%8C/" rel="tag">并行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%82%E6%AD%A5/" rel="tag">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" rel="tag">最佳实践</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%B1%E8%AF%AD/" rel="tag">英语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%84%E8%8C%83/" rel="tag">规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag">计算机组成原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E6%BA%90%E7%A0%81/" rel="tag">读源码</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Dart/" style="font-size: 10px;">Dart</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Gradle/" style="font-size: 15px;">Gradle</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/Jest/" style="font-size: 10px;">Jest</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/React/" style="font-size: 17.5px;">React</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/Typescript/" style="font-size: 15px;">Typescript</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/javascript/" style="font-size: 12.5px;">javascript</a> <a href="/tags/obsidian/" style="font-size: 10px;">obsidian</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a> <a href="/tags/windows/" style="font-size: 12.5px;">windows</a> <a href="/tags/%E4%BA%8B%E4%BB%B6/" style="font-size: 10px;">事件</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 10px;">二叉树</a> <a href="/tags/%E5%B9%B6%E5%8F%91/" style="font-size: 10px;">并发</a> <a href="/tags/%E5%B9%B6%E8%A1%8C/" style="font-size: 10px;">并行</a> <a href="/tags/%E5%BC%82%E6%AD%A5/" style="font-size: 12.5px;">异步</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" style="font-size: 10px;">最佳实践</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 12.5px;">测试</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 12.5px;">英语</a> <a href="/tags/%E8%A7%84%E8%8C%83/" style="font-size: 10px;">规范</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a> <a href="/tags/%E8%AF%BB%E6%BA%90%E7%A0%81/" style="font-size: 10px;">读源码</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/02/28/nvm/">NVM - Node Version Manager Node版本管理</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/28/new-webstorm/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/28/hello-world/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/16/asynchronous/">asynchronous</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/16/spring-in-action/">Spring 实战 读书笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Nate<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
