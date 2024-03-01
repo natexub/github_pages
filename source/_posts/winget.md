@@ -3,7 +3,9 @@ title: Winget
 date: 2021-12-01 06:13:31
 updated: 2021-12-01 06:13:31
 categories:
+- 环境配置
 tags:
+- windows
 ---
 
 2020年5月发布，2021年5月7日 winget 发布了 1.0 版。在这之前有[Chocolatey](https://chocolatey.org/)还有 [Scoop](https://scoop.sh/)
