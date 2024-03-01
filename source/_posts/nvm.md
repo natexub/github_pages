@@ -1,6 +1,6 @@
 ---
 title: NVM - Node Version Manager Node版本管理
-date: 2020--10-19 23:45:25
+date: 2020-10-19 23:45:25
 updated: 2020-10-19 23:45:25
 categories:
 - 环境配置
