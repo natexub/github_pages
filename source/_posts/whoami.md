@@ -1,7 +1,6 @@
 ---
 title: 我是谁
-date: {{date}} {{time}}
-updated: {{date}} {{time}}
+date: 2021-06-05 11:56:02
 categories:
 tags:
 ---

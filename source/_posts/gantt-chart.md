@@ -3,11 +3,9 @@ title: 原生JS造轮子--甘特图
 date: 2022-04-09 17:25:41
 updated: 2022-04-09 17:25:41
 categories:
-
-- 功能组件
-  tags:
-- 造轮子
-
+  - 功能组件
+tags:
+  - 造轮子
 ---
 
 目标是构建一个重用的Web组件`gantt-chart`.
