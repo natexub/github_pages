@@ -1,13 +1,21 @@
+---
+title: WebStorm 配置记录
+date: 2022-04-24 16:28:48
+updated: 2022-04-24 16:28:48
+categories:
+ - 环境配置
+tags:
+ - Javascript
+---
 
-
-## JSDoc
+## 一、JSDoc
 
 ### 插入JSDoc
 
 1. 在函数附近输入/** 并按回车键
 2. ctrl+shift+A 输入Fix Doc Comment
 
-## gitignore
+## 二、gitignore
 
 [gitignore/JetBrains.gitignore at main · github/gitignore · GitHub](https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore)
 
@@ -21,18 +29,19 @@
 
 `vcs.xml` 不包含在内，所以add
 
-## 行分隔符
+## 三、行分隔符
 
 line-separators
 编辑器-代码样式-行分隔符，取消取决于系统，改为LF
 
-## 预览选项卡
+## 四、预览选项卡
 
 Editor > General > Editor Tabs > Openning Policy > preview tab
 
 单击预览，双击打开
 
-### 参考
+## 参考
+
 [JSDoc comments | WebStorm](https://www.jetbrains.com/help/webstorm/creating-jsdoc-comments.html)
 [Use JSDoc: Index](https://jsdoc.app/)
 [Use JSDoc: ES 2015 Classes](https://jsdoc.app/howto-es2015-classes.html)
