@@ -4,8 +4,8 @@
 
 # Site
 title: Nate's Blog
-subtitle: '走过，见过，存在过。'
-description: ''
+subtitle: 走过，见过，存在过。
+description: 无何的博客
 keywords:
 author: Nate
 language: zh-CN
@@ -134,3 +134,8 @@ search:
 #site map
 sitemap:
   path: sitemap.xml
+
+# 使用 Markdown 嵌入图片
+marked:
+  prependRoot: true
+  postAsset: true
